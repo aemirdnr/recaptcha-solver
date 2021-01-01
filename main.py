@@ -31,7 +31,7 @@ WebDriverWait(driver, 10).until(EC.frame_to_be_available_and_switch_to_it((By.CS
 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button#recaptcha-audio-button"))).click()
 
 WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "audio-source")))
-source = driver.find_element_by_id('audio-source').get_attribute('src')
+source = driver.find_element_by_id("audio-source").get_attribute("src")
 
 file = requests.get(source)
 
@@ -50,5 +50,9 @@ with audioFile as source:
 
 print(r.recognize_google(audio))
 
-#Auto input will come with next version.
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "audio-response")))
+tbox = driver.find_element_by_id("audio-response")
+tbox.send_keys(r.recognize_google(audio))
 
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "recaptcha-verify-button")))
+driver.find_element_by_id("recaptcha-verify-button").click()
