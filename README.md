@@ -13,6 +13,6 @@
 
 ![Image from app](https://i.ibb.co/Zf2nwsH/1.png) <- Code output.
 
-![Image from app](https://i.ibb.co/wrpS6bh/2.png) <- Enter the output.
+![Image from app](https://i.ibb.co/wrpS6bh/2.png) <- Output is being input by app.
 
 ![Image from app](https://i.ibb.co/bX0hTcb/3.png) <- Got verified.
